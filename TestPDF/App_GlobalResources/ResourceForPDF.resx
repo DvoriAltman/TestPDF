@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chapter1Bookmark" xml:space="preserve">
+    <value>נטיות תעסוקתיות</value>
+  </data>
+  <data name="chapter2Bookmark" xml:space="preserve">
+    <value>המלצה לרמת לימוד</value>
+  </data>
+  <data name="chapter3Bookmark" xml:space="preserve">
+    <value>המלצה למסלולי לימוד</value>
+  </data>
+  <data name="chapter4Bookmark" xml:space="preserve">
+    <value>המלצה למקצועות מתאימים</value>
+  </data>
+  <data name="chavat" xml:space="preserve">
+    <value>חוות הדעת של </value>
+  </data>
+  <data name="echhechanti" xml:space="preserve">
+    <value>איך הכנתי עבורך את הדוח:
+הדוח אסף את המרכיבים שעלו באבחון ומפרט אותם כך שניתן יהיה באופן פשוט לבנות את תוכנית הקריירה האישית שלך.
+הפרק האישיותי - בפרק זה נציג את מרכיבי הפרופיל האישיותי שלך. נציין את הכישורים הבולטים שלך על מנת להעמיק את ההיכרות שלך עם עצמך, ובכדי שתדע למנף את העוצמות במקומות הנכונים ולשפר את התחומים החלשים שלך.
+פרק הנטיות התעסוקתיות - בפרק זה נציג כיצד הפרופיל האישי שלך מתאים לעולם התעסוקה באמצעות הנטיות התעסוקתיות שלך. את עולם התעסוקה אנחנו מחלקים לשמונה שדות עליהם נפרט בהמשך.
+פרק הלימודים - בפרק זה נציג את רמת הלימודים שמצאנו כמתאימה ביותר עבורך כפי שהדבר השתקף באבחון שבצעת, ולאחר מכן נציג את ההמלצות שלנו לגבי מסלולי הלימוד המתאימים ביותר שעלו מתוך המסלולים שסימנת ומתוך שיחת הייעוץ.
+פרק התעסוקה - בפרק זה נציג את המקצועות המתאימים עבורך ביותר, את המאפיינים שלהם ומה עלייך ללמוד בכדי לעסוק בהם.</value>
+  </data>
+  <data name="kishur" xml:space="preserve">
+    <value>מעבר לעמוד</value>
+  </data>
+  <data name="list1" xml:space="preserve">
+    <value>פרופיל אישיות</value>
+  </data>
+  <data name="list2" xml:space="preserve">
+    <value>נטיות תעסוקתיות</value>
+  </data>
+  <data name="list3" xml:space="preserve">
+    <value>המלצה לרמת לימוד</value>
+  </data>
+  <data name="list4" xml:space="preserve">
+    <value>המלצה למסלולי לימוד</value>
+  </data>
+  <data name="list5" xml:space="preserve">
+    <value>המלצה למקצועות מתאימים</value>
+  </data>
+  <data name="mabadoch" xml:space="preserve">
+    <value>מה מתקבל בדוח:
+חמשת התכונות הבולטות שלך.
+מפת התכונות המצטיינות והבולטות שלך וגם התכונות הפחות בולטות שלך.
+מפת הנטיות התעסוקתיות שלך.
+סוג הלימודים המתאים ביותר עבורך.
+מסלולי הלימוד המתאימים לך ביותר, איפה הם נלמדים ומהם תנאי הקבלה.
+תחום העיסוק המתאים ביותר עבורך.
+המקצוע שיביא לידי ביטוי בצורה הטובה ביותר את האיכויות שלך.</value>
+  </data>
+  <data name="mainBookmark" xml:space="preserve">
+    <value>פרופיל אישיות</value>
+  </data>
+  <data name="page11HemshechTaasuka" xml:space="preserve">
+    <value>המשך פרק התעסוקה</value>
+  </data>
+  <data name="page11Hesber" xml:space="preserve">
+    <value>בטבלה זו נפרט את המלצות התעסוקה הטובות ביותר עבורך שסוכמו על ידי יועץ המערכת</value>
+  </data>
+  <data name="page12Hesber" xml:space="preserve">
+    <value>בטבלה זו נפרט את בחירותיך האישיות כפי שסומנו בהעדפותיך האישיות</value>
+  </data>
+  <data name="page2" xml:space="preserve">
+    <value>מערכת YOUA פותחה על ידי רענן הס ואנשי הצוות שלו כמערכת online לייעוץ קריירה.
+המערכת משלבת ידע מתקדם מתחום הפסיכולוגיה יחד עם טכנולוגיה עדכנית, ומאפשרת לכל מי שעונה על השאלון לקבל הכוונה ללימודים ו/או לעבודה באופן מיידי.
+שאלון ההתאמה האישית לקריירה, לימודים ותעסוקה מתבסס על מודלים תיאורטיים מתקדמים ועל ניסיון רב שנים בייעוץ תעסוקתי לצעירים בשלב התחלת הקריירה ולמבוגרים לקראת החלטות על קריירה שנייה.</value>
+  </data>
+  <data name="page2Header" xml:space="preserve">
+    <value>הסבר - מה מתקבל בדוח</value>
+  </data>
+  <data name="page4cont1" xml:space="preserve">
+    <value>תיאור קצר לסוגי הטיפוסים על פי רשימת הטיפוסים של נאסא:</value>
+  </data>
+  <data name="page4header" xml:space="preserve">
+    <value>אנחנו מחלקים את עולם התעסוקה לשמונה שדות, כאשר כל המקצועות הקיימים כיום משוייכים לשדות אלו.  בעבר נהגו לחלק את עולם התעסוקה לשש שדות, אך עם השנים התפתחו סוגי מקצועות נוספים. לכל שדה יש את המאפיינים שלו.</value>
+  </data>
+  <data name="page4tipusAnashim1" xml:space="preserve">
+    <value>טיפוס אנשים</value>
+  </data>
+  <data name="page4tipusAnashim2" xml:space="preserve">
+    <value>טיפוס חברתי, אוהב להימצא בחברת אנשים. הוא חם ולבבי וקושר במהירות קשרים רגשיים עם אנשים מסביבו. מגלה רגישות, התחשבות וסבלנות כלפי אנשים אחרים.</value>
+  </data>
+  <data name="page4tipusChutz1" xml:space="preserve">
+    <value>טיפוס חוץ וסביבה</value>
+  </data>
+  <data name="page4tipusChutz2" xml:space="preserve">
+    <value>טיפוס דינאמי המעדיף להימצא בניידות ותנועה מאשר לשבת במקום אחד. פעלתן וביצועיסט. אינו אוהב להימצא במקומות סגורים ומעדיף שהייה בחוץ ובטבע.</value>
+  </data>
+  <data name="page4tipusEirgun1" xml:space="preserve">
+    <value>טיפוס ארגון וסדר</value>
+  </data>
+  <data name="page4tipusEirgun2" xml:space="preserve">
+    <value>טיפוס יציב ומאופק, סולידי, מסודר, שיטתי וממושמע. בעל כושר התמדה, אחראי וניתן לסמוך עליו.</value>
+  </data>
+  <data name="page4tipusEiski1" xml:space="preserve">
+    <value>טיפוס עסקי</value>
+  </data>
+  <data name="page4tipusEiski2" xml:space="preserve">
+    <value>טיפוס מעשי ודינאמי, ממולח, בעל כושר שכנוע ויכולת לנהל משא ומתן עם אנשים. אחראי וניתן לסמוך עליו.</value>
+  </data>
+  <data name="page4tipusMadaei1" xml:space="preserve">
+    <value>טיפוס מדעי</value>
+  </data>
+  <data name="page4tipusMadaei2" xml:space="preserve">
+    <value>טיפוס המגלה סקרנות לגבי תהליכים בטבע, מתעניין בעיקר בביולוגיה וכימיה. רציונאלי, הגיוני ונבון מאד. הוא שקול ומאופק.</value>
+  </data>
+  <data name="page4tipusOmanuti1" xml:space="preserve">
+    <value>טיפוס אומנותי</value>
+  </data>
+  <data name="page4tipusOmanuti2" xml:space="preserve">
+    <value>טיפוס מיוחד, "צבעוני", אינדיבידואליסט ונוטה למרוד במוסכמויות. יצירתי, בעל דמיון ומעוף עשירים ומבטא רגשות בקלות.</value>
+  </data>
+  <data name="page4tipusTarbuti1" xml:space="preserve">
+    <value>טיפוס תרבותי</value>
+  </data>
+  <data name="page4tipusTarbuti2" xml:space="preserve">
+    <value>טיפוס המגלה סקרנות אינטלקטואלית בעיקר בנושאים כמו פילוסופיה, היסטוריה, פולקלור וכדומה. נהנה לקרוא ומסוגל לספר בצורה מעניינת על נושאים בהם מתמצא.</value>
+  </data>
+  <data name="page4tipusTech1" xml:space="preserve">
+    <value>טיפוס טכנולוגי</value>
+  </data>
+  <data name="page4tipusTech2" xml:space="preserve">
+    <value>טיפוס רציונאלי והגיוני. בעל חוש טכני מפותח, ביצועיסט, מדעי ותכליתי. נהנה להתעסק בתכנון ובתיקון מכשירים.</value>
+  </data>
+  <data name="page5Anashim" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על רווחת האדם - בשדה זה נכללים מקצועות המשרתים צרכים של אנשים אחרים ומתן סעד ושירותים לפי  צורכיהם, כגון: מקצועות הייעוץ, הפסיכולוגיה, ועבודה סוציאלית, וכן מקצועות שירותי הבית והגנה על הפרט והציבור. מטרת העובד היא להגדיל את הרווחה ואיכות החיים של הזולת</value>
+  </data>
+  <data name="page5Asakim" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על כסף - בשדה זה נכללים מקצועות המכירה למיניהם, מסחר בציוד וברכוש, כולל ניירות ערך, מקצועות שקשורים בכלכלה, השקעות ותיווך, ומקצועות של סוכני ביניים במכירה ובקנייה. מטר העובד בשדה זה היא להגדיל את רווחיו האישיים ו/או של רווחי הארגון, והשירות הניתן הוא בבחינת השקעה עתידית להגדלת הרווחים</value>
+  </data>
+  <data name="page5Chutz" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על נוכחות בחוץ - בשדה זה נכללים מדעי הסביבה, חקלאות, דיג, יערנות, גיאולוגיה, מכרות, טיפול בבעלי חיים וספורט. מטרת העובד במקצועות אלו היא לעבד, לשמר ולאסוף את היבול של מקורות המים, הבריכות ואוצרות הטבע למיניהם</value>
+  </data>
+  <data name="page5Hanetiyot" xml:space="preserve">
+    <value>הנטיות התעוסקתיות של</value>
+  </data>
+  <data name="page5header" xml:space="preserve">
+    <value>כאן מוצגות הנטיות התעסוקתיות האישיות שלך, בהדגשת השדות הדומיננטיים באישיותך. מתוך שדות אלו והשילוב ביניהם נגזרת המלצתנו למסלולי הלימוד והתעסוקה עבורך</value>
+  </data>
+  <data name="page5Mada" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על חקר להבנת הטבע - בשדה זה נכללים מקצועות מדעי הטבע העוסקים בתיאוריה המדעית וביישומים הלא טכנולוגיים שלה. מטרת העובד במקצועות אלו היא להבין את החוקים במגעי הטבע בתחומים: ביולוגיה, כימיה, פיסיקה וכדומה וליישם חוקים אלו</value>
+  </data>
+  <data name="page5Omanut" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על יצירה אמנותית - בשדה זה נכללים המקצועות הנוגעים בכישרונות מיוחדים בשדה האמנות היוצרת, כגון: ציור, פיסול,  וכן בשדה האמנות המעשית, כגון: עיצוב, אדריכלות, תחום הבידור, ריקוד.  במקצועות אלו מטרת העובד היא להגיע לביצוע נאה של המשימה המוטלת עליו או שהוא נוטל על עצמו</value>
+  </data>
+  <data name="page5sadot1" xml:space="preserve">
+    <value>ארגון- רמת התאמה </value>
+  </data>
+  <data name="page5sadot2" xml:space="preserve">
+    <value>טכנולוגיה - רמת התאמה</value>
+  </data>
+  <data name="page5sadot3" xml:space="preserve">
+    <value>עסקים- רמת התאמה</value>
+  </data>
+  <data name="page5sadot4" xml:space="preserve">
+    <value>אמנות- רמת התאמה</value>
+  </data>
+  <data name="page5sadot5" xml:space="preserve">
+    <value>תרבות- רמת התאמה</value>
+  </data>
+  <data name="page5sadot6" xml:space="preserve">
+    <value>אנשים- רמת התאמה</value>
+  </data>
+  <data name="page5sadot7" xml:space="preserve">
+    <value>מדע- רמת התאמה</value>
+  </data>
+  <data name="page5sadot8" xml:space="preserve">
+    <value>חוץ- רמת התאמה</value>
+  </data>
+  <data name="page5Tarbut" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על ערכים וידע - בשדה זה נכללים מקצועות המשמרים את ערכי התרבות ואת העברתם מדור לדור, כגון: מדעי הרוח, מדעי החברה, משפטים, עיתונאות, חינוך ,הוראה והדרכה</value>
+  </data>
+  <data name="page5Tech" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על ציוד, מכשירים, מכונות ומבנים - בשדה זה נכללים המקצועות הכרוכים בתכנון, בייצור, באחזקה או במחקר טכנולוגי. כלולים בו מקצועות ההנדסה למיניהם: הנדסת מכונות, הנדסת חשמל, הנדסת חלל וכדומה, ומקצועות התפעול והתיקון של מכשירים ומכונות</value>
+  </data>
+  <data name="page5Yrgun" xml:space="preserve">
+    <value>מגלה נטייה ללמוד ולעסוק במקצועות שיש בהם דגש על סדר - בשדה זה נכללים עיסוקי ניהול, מינהל, אדמיניסטרציה ופקידות בעסקים פרטיים, בממשלה, במוסדות ציבוריים, מוניציפאליים ובמפעלים. מטרת העובד היא להפעיל ו/או לפעול למען ארגון וניהול יעילים בהקשר של אנשים, ציוד או נתונים</value>
+  </data>
+  <data name="page6cont1" xml:space="preserve">
+    <value>ההתאמה האישית של </value>
+  </data>
+  <data name="page6cont2" xml:space="preserve">
+    <value>נטיות תעסוקתיות</value>
+  </data>
+  <data name="page6cont3" xml:space="preserve">
+    <value>רמת לימוד מתאימה</value>
+  </data>
+  <data name="page6cont4beforeGraph" xml:space="preserve">
+    <value>פירוט הנטיות התעסוקתיות שלך עבור כל אחד מהשדות הקיימים</value>
+  </data>
+  <data name="page6header" xml:space="preserve">
+    <value>בשלב הראשון אנו בוחנים מהי רמת הלימוד הנכונה ביותר עבורך. אנו מחלקים את סוגי ההכשרה והלימוד לשלוש רמות לימוד כמפורט בגרף למטה. על פי ההתאמה האישית נמליץ על מסלולי לימוד מתאימים.</value>
+  </data>
+  <data name="page6Ramatlimud1" xml:space="preserve">
+    <value>לימודים ברמה אקדמאית - מקצועות שדורשים הכשרה תיאורטית ארוכה</value>
+  </data>
+  <data name="page6Ramatlimud2" xml:space="preserve">
+    <value>לימודים ברמה על תיכונית - מקצועות מעשיים הדורשים הכשרה תיאורטית</value>
+  </data>
+  <data name="page6Ramatlimud3" xml:space="preserve">
+    <value>לימודים ברמת קורסים מקצועיים - מקצועות מעשיים ותכליתיים הדורשים הכשרה קצרה</value>
+  </data>
+  <data name="page6Ramatlimudperut1" xml:space="preserve">
+    <value>עיסוקים ברמה זו דורשים בדרך כלל השכלה גבוהה, ידע תיאורטי מעמיק ומומחיות רבה. לדוגמא: מקצועות אקדמאים ומהנדסים</value>
+  </data>
+  <data name="page6Ramatlimudperut2" xml:space="preserve">
+    <value>עיסוקים ברמה זו דורשים בדרך כלל השכלה על תיכונית ויכולת לבצע משימות על בסיס ידע תיאורטי בסיסי והנחיות כלליות בלבד. לדוגמא: הנדסאים וטכנאים</value>
+  </data>
+  <data name="page6Ramatlimudperut3" xml:space="preserve">
+    <value>עיסוקים ברמה זו דורשים הכשרה מקצועית, מעשית וממוקדת המחייבת מיומנות גבוהה כ"בעל מקצוע". לדוגמא: מגשר, טכנאי רנטגן, טכנאי תקשורת</value>
+  </data>
+  <data name="page7Chart1" xml:space="preserve">
+    <value>מוסד לימודים</value>
+  </data>
+  <data name="page7Chart2" xml:space="preserve">
+    <value>מסלול לימודים</value>
+  </data>
+  <data name="page7Chart3" xml:space="preserve">
+    <value>סוג לימודים</value>
+  </data>
+  <data name="page7Chart4" xml:space="preserve">
+    <value>אחוזי התאמה</value>
+  </data>
+  <data name="page7ChartHeader" xml:space="preserve">
+    <value>חמשת מסלולי הלימוד המתאימים ביותר עבורך</value>
+  </data>
+  <data name="page7cont" xml:space="preserve">
+    <value>מסלולי הלימוד המתאימים מבוססים על תוצאות האבחון ועל העדפותיך האישיות </value>
+  </data>
+  <data name="page7hemshechLimudim" xml:space="preserve">
+    <value>המשך פרק הלימודים</value>
+  </data>
+  <data name="page7Hesber" xml:space="preserve">
+    <value>בטבלה זו נפרט את חמשת מסלולי הלימוד שנבחרו בעבורך על ידי היועץ </value>
+  </data>
+  <data name="page8Header1" xml:space="preserve">
+    <value>בטבלה זו נפרט את המלצות הלימודים הטובות ביותר עבורך שסוכמו על ידי יועץ המערכת </value>
+  </data>
+  <data name="page8Header2" xml:space="preserve">
+    <value>בטבלה זו נפרט את בחירותיך האישיות כפי שסומנו בהעדפותיך האישיות</value>
+  </data>
+  <data name="page9Header" xml:space="preserve">
+    <value>בטבלה זו נפרט עד עשר המלצות מערכת הטובות ביותר עבורך</value>
+  </data>
+  <data name="perekHalimudim" xml:space="preserve">
+    <value>פרק הלימודים</value>
+  </data>
+  <data name="perekHataasuka" xml:space="preserve">
+    <value>פרק התעסוקה</value>
+  </data>
+  <data name="perekHataasukaChart1" xml:space="preserve">
+    <value>מקצוע</value>
+  </data>
+  <data name="perekHataasukaChart2" xml:space="preserve">
+    <value>איפה לומדים</value>
+  </data>
+  <data name="perekHataasukaChart3" xml:space="preserve">
+    <value>מסלול לימודים נדרש</value>
+  </data>
+  <data name="perekHataasukaCont" xml:space="preserve">
+    <value>בטבלה זו נפרט את חמשת המקצועות שנבחרו בעבורך על ידי היועץ</value>
+  </data>
+  <data name="perekHataasukaCont1" xml:space="preserve">
+    <value>ההמלצות שלנו למסלולי התעסוקה המתאימים מבוססים על תוצאות האבחון ועל העדפותיך האישיות, ומסלולי ההכשרה אותם סימנו עבורך בפרק הלימודים</value>
+  </data>
+  <data name="perekHataasukaCont2" xml:space="preserve">
+    <value>עשר המלצות המערכת הטובות ביותר עבורך</value>
+  </data>
+  <data name="perekishiyut" xml:space="preserve">
+    <value>הפרק האישיותי של </value>
+  </data>
+  <data name="perekishiyut1" xml:space="preserve">
+    <value>אני ממליץ להבין ולהכיר את הסעיפים הבאים לעומק, כי שימוש נכון ביכולות ובחוזקות שלך יוביל אותך למקומות טובים ונכונים</value>
+  </data>
+  <data name="perekishiyut2" xml:space="preserve">
+    <value>מאפייני האישיות הבולטים של</value>
+  </data>
+  <data name="sicum" xml:space="preserve">
+    <value>סיכום וקצת צידה לדרך</value>
+  </data>
+  <data name="sicumCont1" xml:space="preserve">
+    <value>אחד מהציטוטים האהובים עלי הוא של סטיב ג'ובס כאשר ניסה לתמצת את המפתח את המפתח להצלחה בחיים ואמר </value>
+  </data>
+  <data name="sicumCont2" xml:space="preserve">
+    <value>"Do what you love"</value>
+  </data>
+  <data name="sicumCont3" xml:space="preserve">
+    <value>אני מאמין שאם נפנה ונעסוק במה שאנחנו אוהבים - כך גם נצליח. הצלחה זו תשפיע על שאר המימדים בחיים שלנו ותצעיד אותנו קדימה לכיווני התפתחות נכונים.</value>
+  </data>
+  <data name="sicumCont4" xml:space="preserve">
+    <value>התכנית שבנינו לך היא השלב הראשון ביציאה לדרך החדשה ובה תשובות, כלים וכיוונים. נותר לקחת את כל הכלים ולצאת לדרך.</value>
+  </data>
+  <data name="sicumCont5" xml:space="preserve">
+    <value>נכון שיהיו קשיים, ולא תמיד הכול פשוט מול הלחצים שבדרך, ציפיות הסביבה, הצורך לרצות אחרים ועמידה בציפיות הסביבה שיאתגרו כל הזמן את ההיצמדות לתכנית הזו.</value>
+  </data>
+  <data name="sicumCont6" xml:space="preserve">
+    <value>ככל שיהיו בך הכוחות וההבנה להיצמד לכיוון אותו בחרת, כך יגיעו גם ההצלחות, והן יגיעו.</value>
+  </data>
+  <data name="sicumCont7" xml:space="preserve">
+    <value>אאחל לך המון בהצלחה</value>
+  </data>
+  <data name="sicumCont8" xml:space="preserve">
+    <value> YOUA רענן הס, פסיכולוג ראשי</value>
+  </data>
+  <data name="tavlaTaasuka1" xml:space="preserve">
+    <value>מקצוע</value>
+  </data>
+  <data name="tavlaTaasuka2" xml:space="preserve">
+    <value>איפה לומדים</value>
+  </data>
+  <data name="tavlaTaasuka3" xml:space="preserve">
+    <value>מסלול לימודים נדרש</value>
+  </data>
+  <data name="tipusYazami" xml:space="preserve">
+    <value>אדם אשר מחובר לעשייה, להנעת תהליכים, שאוהב לאתגר את עצמו בפרוייקטים חדשים וביוזמות שונות. מניע בעצמו תהליך או מאיץ תהליך. נוטה שלא לחשוש משינויים ויודע לאתר הזדמנויות</value>
+  </data>
+</root>
