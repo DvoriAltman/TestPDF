@@ -1,54 +1,28 @@
 ﻿Imports Microsoft.VisualBasic
-Imports iTextSharp.text
+'Imports Aspose.Pdf
+Imports iText.Kernel.Font
+Imports iText.Kernel.Pdf
+Imports iText.Layout
+Imports iText.Layout.Element
 Imports System.IO
-Imports iTextSharp.text.pdf
+Imports System.Net
+Imports System.Net.Http
 Imports System.Data
 Imports System.Diagnostics
 Imports System.Web.Services
 Imports System.Configuration.ConfigurationSettings
 'Imports System.Web.UI.DataVisualization.Charting
-Imports iTextSharp.tool.xml
-Imports iTextSharp.text.pdf.parser
 Imports System.Resources
 Imports System.Collections
-Imports PdfSharp.Pdf
-Imports PdfSharp.Drawing
+'Imports Aspose.Pdf.Text
 
 Public Class CreatePDF
 
-    <WebMethod()>
-    Public Sub sendPdf()
-        Dim pdfData As Byte() = CreatePDFReport()
-        HttpContext.Current.Response.Clear()
-        HttpContext.Current.Response.ContentType = "application/pdf"
-        HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Report.pdf")
-        HttpContext.Current.Response.OutputStream.Write(pdfData, 0, pdfData.Length)
-        HttpContext.Current.Response.BinaryWrite(pdfData)
-        HttpContext.Current.Response.Flush()
-        HttpContext.Current.Response.End()
-    End Sub
 
     <WebMethod()>
-    Public Sub CreatePDFReport()
-        ' יצירת מסמך PDF חדש
-        Dim doc As New PdfDocument()
-        doc.info.Title = "הדוח שלי"
 
-        ' יצירת דף חדש במסמך
-        Dim page As PdfPage = doc.AddPage()
 
-        ' יצירת גרפיקה לדף
-        Dim gfx As XGraphics = XGraphics.FromPdfPage(page)
 
-        ' הגדרת פונטים לציור
-        Dim font As New XFont("Verdana", 20, XFontStyle.Bold)
-
-        ' הוספת טקסט לדף
-        gfx.DrawString("שלום עולם, זהו דוח PDF", font, XBrushes.Black, New XPoint(100, 100))
-
-        ' שמירת ה-PDF
-        doc.Save("Report.pdf")
-    End Sub
 
 
     'Public Function CreatePDFReport() As Byte()
@@ -56,43 +30,112 @@ Public Class CreatePDF
     '        ' יצירת PDF חדש בזיכרון
     '        Using memoryStream As New MemoryStream()
     '            Dim document As New Document(PageSize.A4, 50, 50, 25, 25)
-    '            memoryStream.Flush()
-    '            memoryStream.Position = 0
 
     '            ' הגדרת writer שיכתוב ל-MemoryStream
     '            Dim writer As PdfWriter = PdfWriter.GetInstance(document, memoryStream)
 
-    '            ' פתיחת מסמך ה-PDF
+    '            ' פתיחת מסמך 
     '            document.Open()
     '            'הגדרת הפונטים במסמך
-    '            Dim fontPath As String = "C:\Windows\Fonts\Arial.ttf"
-    '            Dim baseFont As BaseFont = baseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED) 'לעדכן לאריאל או תומך עברית אחר
-    '            Dim titleFont As Font = New Font(baseFont, 22, Font.BOLD, BaseColor.BLACK) 'פונט מודגש לכותרות 
-    '            Dim customFont As Font = New Font(baseFont, 16, Font.NORMAL, BaseColor.BLACK)  'פונט רגיל לשאר המסמך
+
+
     '            ' הוספת תוכן למסמך
-    '            document.Add(New PdfDate(Date.Now.ToString("dd/MM/yyyy")))   'תאריך של עכשיו
-    '            document.Add(New Paragraph(Environment.NewLine))
-    '            document.Add(New Paragraph("title", titleFont))
-    '            document.Add(New Paragraph("iTextSharp", titleFont))
-    '            document.Add(New Paragraph("text", customFont))
+
 
     '            ' סגירת המסמך
     '            document.Close()
+    '            Console.WriteLine("PDF size: " & memoryStream.Length)
 
-    '            ' החזרת הדאטה כ-Byte Array
     '            Return memoryStream.ToArray()
     '        End Using
     '    Catch ex As Exception
-    '        ' טיפול בשגיאות - תוכל להוסיף לוגים או לזרוק חריגה
     '        Throw New ApplicationException("Error generating PDF", ex)
     '    End Try
     'End Function
+    '<WebMethod()>
+    'Public Sub CreatePDFReport()
+    '    Try
+
+    '        Console.WriteLine("CreatePDFReport called")
+    '        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*") ' מאפשר לכל דומיין לגשת
+    '        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS") ' הגדרת השיטות המורשות
+    '        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type") ' הגדרת הכותרות המורשות
+    '        Dim baseDir As String = AppDomain.CurrentDomain.BaseDirectory
+    '        Dim templatePath = baseDir + "pdfFiles\test.pdf"
+    '        Dim memoryStream As New MemoryStream()
+    '        Console.WriteLine("MemoryStream initialized")
+    '        Using fileStream As New FileStream(templatePath, FileMode.Open, FileAccess.Read)
+    '            fileStream.CopyTo(memoryStream)
+    '        End Using
+    '        'יצירת PDF חדש בזיכרון
+    '        Using pdfWriter As New PdfWriter(memoryStream)
+
+    '            Dim pdfDoc As New PdfDocument(pdfWriter)
+    '            Dim document As New Document(pdfDoc)
+
+    '            'Dim fontPath As String = "C:\Windows\Fonts\Arial.ttf"
+    '            document.Add(New Paragraph("Title"))
+    '            document.Add(New Paragraph("Subtitle"))
+    '            Dim title As New Paragraph("title")
+    '            Dim subtitle As New Paragraph("iText 7")
+    '            document.Add(title)
+    '            document.Add(subtitle)
+
+    '            ' ובדיקת הקונסול לוג עם גודל המידע לראות אם נשמר באמת סגירת המסמך
+    '            document.Close()
+    '            memoryStream.Close()
+    '            Console.WriteLine("PDF size: " & memoryStream.Length)
+
+    '        End Using
+    '        Console.WriteLine("Sending PDF to client")
+    '        ' שליחת ה-PDF כקובץ להורדה ישירה
+    '        HttpContext.Current.Response.Clear()
+    '        HttpContext.Current.Response.ContentType = "application/pdf"
+    '        HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Report.pdf")
+    '        HttpContext.Current.Response.BinaryWrite(memoryStream.ToArray())  ' שליחת קובץ ה-PDF
+    '        HttpContext.Current.Response.Flush()
+    '        HttpContext.Current.Response.Close()
+    '        HttpContext.Current.Response.End()
+
+    '        'HttpContext.Current.Response.Clear()
+    '        'HttpContext.Current.Response.ContentType = "application/pdf"
+    '        'HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Report.pdf") ' שם הקובץ שיורד
+    '        'HttpContext.Current.Response.BinaryWrite(memoryStream.ToArray()) ' שליחת קובץ ה-PDF
+    '        'HttpContext.Current.Response.Flush()
+    '        'HttpContext.Current.Response.Close()
+    '        'HttpContext.Current.Response.End()
+
+    '    Catch ex As Exception
+    '        Throw New ApplicationException("Error generating PDF", ex)
+    '    End Try
+    'End Sub
+
+    'Dim pdfDocument As New Aspose.Pdf.Document()
+    'Dim text As New TextFragment("שלום הנה דוח בסיעתא דשמיא")
+    'Dim page As Page
+    'page = pdfDocument.Pages.Add()
+    'page.Paragraphs.Add(text)
+
+    'Using ms As New MemoryStream()
+    'pdfDocument.Save()
+    'Using fileStream As New FileStream(templatePath, FileMode.Open, FileAccess.Read)
+    '    fileStream.CopyTo(memoryStream)
 
 
 
+    'Document.Open()
+    'הגדרת הפונטים במסמך
+    'Dim fontPath As String = "C:\Windows\Fonts\Arial.ttf"
+    'Dim baseFont As BaseFont = baseFont.CreateFont(fontPath, baseFont.IDENTITY_H, baseFont.EMBEDDED) 'לעדכן לאריאל או תומך עברית אחר
+    'Dim titleFont As Font = New Font(baseFont, 22, Font.BOLD, BaseColor.BLACK) 'פונט מודגש לכותרות 
+    'Dim customFont As Font = New Font(baseFont, 16, Font.NORMAL, BaseColor.BLACK)  'פונט רגיל לשאר המסמך
 
-
-
+    'הוספת תוכן למסמך
+    'Document.Add(New PdfDate(Date.Now.ToString("dd/MM/yyyy")))   'תאריך של עכשיו
+    'Document.Add(New Paragraph(Environment.NewLine))
+    'Document.Add(New Paragraph("title", titleFont))
+    'Document.Add(New Paragraph("iTextSharp", titleFont))
+    'Document.Add(New Paragraph("text", customFont))
 
     'Public Function CreatePDFReport() As Byte()
     '    Dim ms As New MemoryStream()
