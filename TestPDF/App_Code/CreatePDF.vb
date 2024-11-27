@@ -21,9 +21,13 @@ Public Class CreatePDF
 
     <WebMethod()>
     Public Sub GeneratePdf()
+
+        Dim MemoryStream As New MemoryStream()
         '        'יצירת PDF חדש בזיכרון
-        Using MemoryStream As New MemoryStream()
+        Using MemoryStream
+            Dim outputPath As String = Path.Combine("C:\DvoriSpace\MyGeneratedReport.pdf")
             Using pdfWriter As New PdfWriter(MemoryStream)
+
 
                 Dim pdfDoc As New PdfDocument(pdfWriter)
                 Dim document As New Document(pdfDoc)
@@ -38,10 +42,18 @@ Public Class CreatePDF
 
                 ' ובדיקת הקונסול לוג עם גודל המידע לראות אם נשמר באמת סגירת המסמך
                 document.Close()
-                MemoryStream.Close()
-                Console.WriteLine("PDF size: " & MemoryStream.Length)
 
-                Console.WriteLine("Sending PDF to client")
+
+            End Using
+
+            Console.WriteLine("PDF size: " & MemoryStream.Length)
+
+            Console.WriteLine("Sending PDF to client")
+
+            Dim byte1 As Byte() = MemoryStream.ToArray()
+
+            Using fs As FileStream = File.Create(outputPath)
+                fs.Write(byte1, 0, CInt(byte1.Length))
             End Using
 
             HttpContext.Current.Response.Clear()
@@ -51,7 +63,11 @@ Public Class CreatePDF
             HttpContext.Current.Response.Flush()
             HttpContext.Current.Response.Close()
             HttpContext.Current.Response.End()
+
+
         End Using
+
+        MemoryStream.Close()
 
     End Sub
 

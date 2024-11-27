@@ -17,7 +17,7 @@
   <script>
         function downloadPdf() {
             $.ajax({
-                url: '/Detault/GeneratePdf', // נקודת הקצה ליצירת הדוח
+                url: '/Default/GeneratePdf', // נקודת הקצה ליצירת הדוח
                 type: 'GET',
                 xhrFields: {
                     responseType: 'blob' // מקבלים את התגובה כ-Blob
