@@ -40,7 +40,17 @@ Public Class CreatePDF
                 document.Close()
                 MemoryStream.Close()
                 Console.WriteLine("PDF size: " & MemoryStream.Length)
+
+                Console.WriteLine("Sending PDF to client")
             End Using
+
+            HttpContext.Current.Response.Clear()
+            HttpContext.Current.Response.ContentType = "application/pdf"
+            HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Report.pdf")
+            HttpContext.Current.Response.BinaryWrite(MemoryStream.ToArray())  ' שליחת קובץ ה-PDF
+            HttpContext.Current.Response.Flush()
+            HttpContext.Current.Response.Close()
+            HttpContext.Current.Response.End()
         End Using
 
     End Sub
@@ -48,15 +58,7 @@ Public Class CreatePDF
 
 
 
-    '        Console.WriteLine("Sending PDF to client")
-    '        ' שליחת ה-PDF כקובץ להורדה ישירה
-    '        HttpContext.Current.Response.Clear()
-    '        HttpContext.Current.Response.ContentType = "application/pdf"
-    '        HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Report.pdf")
-    '        HttpContext.Current.Response.BinaryWrite(memoryStream.ToArray())  ' שליחת קובץ ה-PDF
-    '        HttpContext.Current.Response.Flush()
-    '        HttpContext.Current.Response.Close()
-    '        HttpContext.Current.Response.End()
+    '       
 
 
     '    Catch ex As Exception
