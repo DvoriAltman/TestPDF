@@ -20,73 +20,34 @@ Public Class CreatePDF
 
 
     <WebMethod()>
+    Public Sub GeneratePdf()
+        '        'יצירת PDF חדש בזיכרון
+        Using MemoryStream As New MemoryStream()
+            Using pdfWriter As New PdfWriter(MemoryStream)
+
+                Dim pdfDoc As New PdfDocument(pdfWriter)
+                Dim document As New Document(pdfDoc)
+
+                'Dim fontPath As String = "C:\Windows\Fonts\Arial.ttf"
+                document.Add(New Paragraph("Title"))
+                document.Add(New Paragraph("Subtitle"))
+                Dim title As New Paragraph("title")
+                Dim subtitle As New Paragraph("iText 7")
+                document.Add(title)
+                document.Add(subtitle)
+
+                ' ובדיקת הקונסול לוג עם גודל המידע לראות אם נשמר באמת סגירת המסמך
+                document.Close()
+                MemoryStream.Close()
+                Console.WriteLine("PDF size: " & MemoryStream.Length)
+            End Using
+        End Using
+
+    End Sub
 
 
 
 
-
-    'Public Function CreatePDFReport() As Byte()
-    '    Try
-    '        ' יצירת PDF חדש בזיכרון
-    '        Using memoryStream As New MemoryStream()
-    '            Dim document As New Document(PageSize.A4, 50, 50, 25, 25)
-
-    '            ' הגדרת writer שיכתוב ל-MemoryStream
-    '            Dim writer As PdfWriter = PdfWriter.GetInstance(document, memoryStream)
-
-    '            ' פתיחת מסמך 
-    '            document.Open()
-    '            'הגדרת הפונטים במסמך
-
-
-    '            ' הוספת תוכן למסמך
-
-
-    '            ' סגירת המסמך
-    '            document.Close()
-    '            Console.WriteLine("PDF size: " & memoryStream.Length)
-
-    '            Return memoryStream.ToArray()
-    '        End Using
-    '    Catch ex As Exception
-    '        Throw New ApplicationException("Error generating PDF", ex)
-    '    End Try
-    'End Function
-    '<WebMethod()>
-    'Public Sub CreatePDFReport()
-    '    Try
-
-    '        Console.WriteLine("CreatePDFReport called")
-    '        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*") ' מאפשר לכל דומיין לגשת
-    '        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS") ' הגדרת השיטות המורשות
-    '        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type") ' הגדרת הכותרות המורשות
-    '        Dim baseDir As String = AppDomain.CurrentDomain.BaseDirectory
-    '        Dim templatePath = baseDir + "pdfFiles\test.pdf"
-    '        Dim memoryStream As New MemoryStream()
-    '        Console.WriteLine("MemoryStream initialized")
-    '        Using fileStream As New FileStream(templatePath, FileMode.Open, FileAccess.Read)
-    '            fileStream.CopyTo(memoryStream)
-    '        End Using
-    '        'יצירת PDF חדש בזיכרון
-    '        Using pdfWriter As New PdfWriter(memoryStream)
-
-    '            Dim pdfDoc As New PdfDocument(pdfWriter)
-    '            Dim document As New Document(pdfDoc)
-
-    '            'Dim fontPath As String = "C:\Windows\Fonts\Arial.ttf"
-    '            document.Add(New Paragraph("Title"))
-    '            document.Add(New Paragraph("Subtitle"))
-    '            Dim title As New Paragraph("title")
-    '            Dim subtitle As New Paragraph("iText 7")
-    '            document.Add(title)
-    '            document.Add(subtitle)
-
-    '            ' ובדיקת הקונסול לוג עם גודל המידע לראות אם נשמר באמת סגירת המסמך
-    '            document.Close()
-    '            memoryStream.Close()
-    '            Console.WriteLine("PDF size: " & memoryStream.Length)
-
-    '        End Using
     '        Console.WriteLine("Sending PDF to client")
     '        ' שליחת ה-PDF כקובץ להורדה ישירה
     '        HttpContext.Current.Response.Clear()
@@ -97,13 +58,6 @@ Public Class CreatePDF
     '        HttpContext.Current.Response.Close()
     '        HttpContext.Current.Response.End()
 
-    '        'HttpContext.Current.Response.Clear()
-    '        'HttpContext.Current.Response.ContentType = "application/pdf"
-    '        'HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=Report.pdf") ' שם הקובץ שיורד
-    '        'HttpContext.Current.Response.BinaryWrite(memoryStream.ToArray()) ' שליחת קובץ ה-PDF
-    '        'HttpContext.Current.Response.Flush()
-    '        'HttpContext.Current.Response.Close()
-    '        'HttpContext.Current.Response.End()
 
     '    Catch ex As Exception
     '        Throw New ApplicationException("Error generating PDF", ex)
@@ -123,73 +77,15 @@ Public Class CreatePDF
 
 
 
-    'Document.Open()
-    'הגדרת הפונטים במסמך
-    'Dim fontPath As String = "C:\Windows\Fonts\Arial.ttf"
-    'Dim baseFont As BaseFont = baseFont.CreateFont(fontPath, baseFont.IDENTITY_H, baseFont.EMBEDDED) 'לעדכן לאריאל או תומך עברית אחר
-    'Dim titleFont As Font = New Font(baseFont, 22, Font.BOLD, BaseColor.BLACK) 'פונט מודגש לכותרות 
-    'Dim customFont As Font = New Font(baseFont, 16, Font.NORMAL, BaseColor.BLACK)  'פונט רגיל לשאר המסמך
 
-    'הוספת תוכן למסמך
-    'Document.Add(New PdfDate(Date.Now.ToString("dd/MM/yyyy")))   'תאריך של עכשיו
-    'Document.Add(New Paragraph(Environment.NewLine))
-    'Document.Add(New Paragraph("title", titleFont))
-    'Document.Add(New Paragraph("iTextSharp", titleFont))
-    'Document.Add(New Paragraph("text", customFont))
+
 
     'Public Function CreatePDFReport() As Byte()
     '    Dim ms As New MemoryStream()
     '    Dim userId As String = 12
-    '    'להוסיף בדיקת שפת לקוח כדי להתאים את הדוח גנרית
-    '    Dim ds As Data.DataSet
-    '    Dim dat As New DataTable   'qCandy.qCandy(AppSettings("sDSN"))
-    '    '' מיקום קובץ הפונט
-    '    Dim fontPath As String = "C:\Windows\Fonts\Arial.ttf" ' לעדכן את הנתיב לפי המיקום הנכון ופונט רצוי מהתיקייה
-    '    '' מיקום שמירת ה-PDF לעצמי לבדיקות תוצאה- אחכ להוריד
-    '    Dim outputPath As String = "C:\DvoriSpace\Reports\ClientReport.pdf"
-
-    '    '''הקצאת משתנים לוקליים
-    '    'ds = dat.getManById(userId.ToString)
-    '    'Dim firstName = ds.Tables(0).Rows(0)("first_name")    'שם המשתמש
-    '    ''בדיקות לשפת הלקוח- להמשיך בדיקה בהתאם
 
     '    Dim firstName = "dvori"
 
-    '    ''שם התאמה ותיאור ההתאמה 
-    '    'ds = dat.getUserCompetenciesById(userId.ToString, "T", lang)
-    '    Dim compName1 = ds.Tables(0).Rows(0)("compentencyName")
-    '    Dim compDesc1 = ds.Tables(0).Rows(0)("compDescription")
-    '    Dim compName2 = ds.Tables(0).Rows(1)("compentencyName")
-    '    Dim compDesc2 = ds.Tables(0).Rows(1)("compDescription")
-    '    Dim compName3 = ds.Tables(0).Rows(2)("compentencyName")
-    '    Dim compDesc3 = ds.Tables(0).Rows(2)("compDescription")
-    '    Dim compName4 = ds.Tables(0).Rows(3)("compentencyName")
-    '    Dim compDesc4 = ds.Tables(0).Rows(3)("compDescription")
-    '    Dim compName5 = ds.Tables(0).Rows(4)("compentencyName")
-    '    Dim compDesc5 = ds.Tables(0).Rows(4)("compDescription")
-    '    Dim compName6 = ds.Tables(0).Rows(5)("compentencyName")
-    '    Dim compDesc6 = ds.Tables(0).Rows(5)("compDescription")
-    '    Dim compName7 = ds.Tables(0).Rows(6)("compentencyName")
-    '    Dim compDesc7 = ds.Tables(0).Rows(6)("compDescription")
-
-    '    'ds = dat.GetMarkFitForMan(userId.ToString)
-    '    Dim tbl = ds.Tables(0)
-    '    Dim tbl1 = createDataTable("קטגוריה_System.String:תיאור_System.String:סהכ_System.String")
-    '    Dim caption As String = "עסקים:ארגון:תרבות:אנשים:אמנות:חוץ:מדע:טכנולוגיה"
-
-    '    'For x = 0 To caption.Split(":").Length - 1
-    '    '    Dim tr As DataRow = tbl1.NewRow
-    '    '    tr.Item(0) = caption.Split(":")(x)
-    '    '    tbl1.Rows.Add(tr)
-    '    'Next
-
-    '    'For x = 0 To 7
-    '    '    Dim tr As DataRow = tbl1.NewRow
-    '    '    ' tr.Item(1) = tbl.Rows(0)("textMark").Split("I")(3).Split(",")(x - 1)
-    '    '    tbl1.Rows(x)(2) = tbl.Rows(0)("textMark").Split("I")(3).Split(",")(x)
-    '    '    ds = dat.GetFitFields(x + 1, lang)
-
-    '    'Next
 
     '    ' יצירת המסמך
     '    Dim pdfDoc As New Document(PageSize.A4, 50, 50, 50, 50) 'הגדרת גודל עמוד ורוחב שוליים לפי פיקסלים
